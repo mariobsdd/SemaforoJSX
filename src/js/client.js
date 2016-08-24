@@ -10,29 +10,29 @@ import '../styles/style.scss';
 //EL CUAL SE PUEDE ENCONTRAR EN EL SIGUIENTE ENLACE:
 //https://github.com/samuelchvez/basic-javascript-trafficlight
 
-const Traffic = ({state}) => (
+const TrafficLight = ({state}) => (
   <div>
-  <h1>Traffic Light using Redux + React</h1>
+  <h4>Traffic Light using Redux + React + sass</h4>
     <div class="traffic-light">
-        <div class={(state === 0 ? "red light": "red light off")}></div>
-        <div class={(state === 1 ? "yellow light": "yellow light off")}></div>
-        <div class={(state === 2 ? "green light": "green light off")}></div>
+        <div class={(state === 'red' ? "red light": "red light off")}></div>
+        <div class={(state === 'yel' ? "yellow light": "yellow light off")}></div>
+        <div class={(state === 'gre' ? "green light": "green light off")}></div>
     </div>
     <button onClick={ () => store.dispatch({type:"change"})}>Change Light</button>
   </div>
 );
 
 //reducer
-const light = (state = 0, action) => {
+const light = (state = 'red', action) => {
   if (action.type === "change"){
     switch(state){
       //switch the state of the traffic light
-      case 0:
-        return 2;
-      case 1:
-        return 0;
-      case 2:
-        return 1;
+      case 'red':
+        return 'gre';
+      case 'yel':
+        return 'red';
+      case 'gre':
+        return 'yel';
       default:
         return state;
     }
@@ -46,7 +46,7 @@ const store = createStore(light);
 //render
 const render = () => {
   ReactDOM.render(
-        <Traffic state={store.getState()}/>,
+        <TrafficLight state={store.getState()}/>,
         document.getElementById("root")
     );
 }
