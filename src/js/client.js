@@ -10,52 +10,6 @@ import '../styles/style.scss';
 //EL CUAL SE PUEDE ENCONTRAR EN EL SIGUIENTE ENLACE:
 //https://github.com/samuelchvez/basic-javascript-trafficlight
 
-/*
-const Redux = require('redux');
-//const createStore = Redux.createStore;
-//const createStore 
-const reducer = (state,action) => {
-  if (state === undefined){
-    state = 'initial state';
-  }
-  else{
-    switch(action.type){
-      case 'GO':
-        state = 'GO'
-        break;
-      case 'STOP':
-        state = 'STOP'
-        break;
-      case 'CAUTION':
-        state = 'CAUTION'
-        break;
-    }
-  }
-  return state;
-}
-
-
-const cautionAction = {
-  type: 'CAUTION'
-};
-
-const goAction = {
-  type: 'GO'
-};
-
-const stopAction = {
-  type: 'STOP'
-};
-
-store.dispatch(stopAction);
-console.log('State: '+store.getState());
-
-store.dispatch(cautionAction);
-console.log('State: '+store.getState());
-
-store.dispatch(goAction);
-console.log('State: '+store.getState());*/
-
 const Traffic = ({state}) => (
   <div>
   <h1>Traffic Light using Redux + React</h1>
